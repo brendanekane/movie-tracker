@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :movies
+  resources :movies, except: [:destroy]
+  resources :actors, except: [:destroy]
 end
