@@ -1,0 +1,20 @@
+<ul>
+  <li>
+    <%= @movie.title %>
+  </li>
+  <li>
+    <%= @movie.director %>
+  </li>
+  <li>
+    <%= @movie.year %>
+  </li>
+  <% if @movie.rating %>
+    <li>
+      <%= @movie.rating %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit Movie", edit_movie_path(@movie.id) %>
+<br>
+<%= link_to "All Movies", movies_path %>
