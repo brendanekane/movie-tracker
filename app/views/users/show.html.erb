@@ -9,6 +9,22 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<h4>User Movies</h4>
+<ul>
+  <% @user.movie_list.each do |title| %>
+  <% user_movie = Movie.find_by({title: title}) %>
+  <li>
+    <p>
+      <%= user_movie.title %>
+    </p>
+  </li>
+  <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+</ul>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Create Movie', new_movie_path %>
+
 <%= link_to 'Back', users_path %>

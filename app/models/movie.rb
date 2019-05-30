@@ -1,6 +1,8 @@
 class Movie < ApplicationRecord
   validates :director, :year, presence: true
   validates :title, presence: true, uniqueness: true
+
+
   has_many :movie_actors
   has_many :actors, through: :movie_actors
 
