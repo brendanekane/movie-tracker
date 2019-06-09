@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class Api::MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update_attributes(movie_params)
-      redirect_to movie_path(@movie.id)
+      redirect_to api_movie_path(@movie.id)
     else
       flash.now[:errors] = @movie.errors.full_messages
       render :edit

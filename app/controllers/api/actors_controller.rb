@@ -1,4 +1,4 @@
-class ActorsController < ApplicationController
+class Api::ActorsController < ApplicationController
 
   def new
     @actor = Actor.new
@@ -33,7 +33,7 @@ class ActorsController < ApplicationController
   def update
     @actor = Actor.find(params[:id])
     if @actor.update_attributes(actor_params)
-      redirect_to(actor_path(@actor.id))
+      redirect_to(api_actor_path(@actor.id))
     else
       flash.now[:errors] = @actor.errors.full_messages
       render :edit

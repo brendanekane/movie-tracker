@@ -1,4 +1,4 @@
-class UserSessionsController < ApplicationController
+class Api::UserSessionsController < ApplicationController
   require 'byebug'
   def new
 
