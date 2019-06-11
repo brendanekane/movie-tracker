@@ -1,14 +1,20 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Movie from './movie.jsx';
+import { getMovies } from '../actions/movie_actions.js'
 
 const mapStateToProps = state => {
-  return;
+  return ({
+    movies: state.movies
+  });
 };
 
 
-const mapDispatchToProps = state => {
-  return;
+const mapDispatchToProps = dispatch => {
+  debugger
+  return({
+    getMovies: () => dispatch(getMovies())
+  });
 };
 
 export default withRouter(connect(

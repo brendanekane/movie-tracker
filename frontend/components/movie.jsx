@@ -8,8 +8,13 @@ class Movie extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    debugger
+    this.props.getMovies();
+  }
+
   render() {
-    // debugger
+    debugger
     return (
       <div>
         "HELLOOOOO"
