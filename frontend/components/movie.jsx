@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 
@@ -9,15 +9,32 @@ class Movie extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     this.props.getMovies();
+    debugger
   }
 
   render() {
     debugger
     return (
       <div>
-        "HELLOOOOO"
+        <ul>
+          {Object.keys(this.props.movies).map( key => {
+            const movie = this.props.movies[key];
+            return (
+              <li>
+                <Link to={`/movie/${key}`}>
+                </Link>
+                <br/>
+                <div>
+                  <p>{movie.title}</p>
+                  <p>{movie.director}</p>
+                  <p>{movie.year}</p>
+                </div>
+              </li>
+
+            )
+          })}
+        </ul>
       </div>
     )
   }

@@ -5,11 +5,13 @@ class Api::UserSessionsController < ApplicationController
   end
 
   def create
-    if login(params[:email], params[:password])
-      redirect_to(movies_path, notice: 'Logged in Successfully')
+    if login(params[:user][:email], params[:user][:password])
+      @user = User.find_by(email: params[:user][:email])
+      # redirect_to(movies_path, notice: 'Logged in Successfully')
+      render "api/users/show"
     else
       flash.now[:errors] = "Login Failed"
-      render action: :new
+      render plain: "LOGIN FAILED"
     end
 end
 

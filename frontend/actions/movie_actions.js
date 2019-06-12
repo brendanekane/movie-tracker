@@ -5,6 +5,7 @@ export const RECEIVE_MOVIE = 'RECEIVE_MOVIE'
 
 export const receiveMovies = movies => {
   debugger
+  debugger
   return ({
     type: RECEIVE_MOVIES,
     movies
